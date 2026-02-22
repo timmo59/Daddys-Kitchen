@@ -1139,6 +1139,10 @@
                     <button class="mini-btn" onclick="promptDeleteCategory()" title="Delete a category" style="background:var(--terracotta); color:white; border-color:var(--terracotta);">− Delete</button>
                 </div>
             </div>
+            <div style="display:flex; gap:6px; padding:8px 12px; border-bottom:1px solid #eee; background:#fafaf7;">
+                <button onclick="exportRecipes()" style="flex:1; padding:6px 8px; background:white; border:1.5px solid var(--tan); border-radius:8px; font-size:0.78rem; font-weight:700; color:var(--olive); cursor:pointer;" title="Save all your recipes to a file you can share or restore later">💾 Backup Recipes</button>
+                <button onclick="triggerImport()" style="flex:1; padding:6px 8px; background:white; border:1.5px solid var(--tan); border-radius:8px; font-size:0.78rem; font-weight:700; color:var(--olive); cursor:pointer;" title="Load recipes from a backup file">📂 Restore Recipes</button>
+            </div>
             <div style="padding: 8px 12px; border-bottom: 1px solid #eee; background: linear-gradient(135deg, #fef9f5, #fffef9);">
                 <button onclick="triggerPersonalImport()" style="width:100%; padding: 8px 10px; background: linear-gradient(135deg, var(--terracotta), var(--burnt-orange)); color: white; border: none; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; letter-spacing: 0.3px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
                     📄 Import My Recipes (.docx / .pdf)
