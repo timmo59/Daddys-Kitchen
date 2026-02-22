@@ -2815,13 +2815,18 @@
         showTab(null, tabName, false);
     });
 
-    // On first load, replace the initial history state so back works from the start
+    // On first load, only add hash if a specific tab was requested
     (function() {
         const hash = window.location.hash.replace('#', '');
         const validTabs = ['dinner','askdaddy','whatwentwrong','recipes','basics','reference'];
-        const startTab = validTabs.includes(hash) ? hash : 'dinner';
-        history.replaceState({ tab: startTab }, '', '#' + startTab);
-        if (startTab !== 'dinner') showTab(null, startTab, false);
+        if (validTabs.includes(hash)) {
+            // A specific tab was requested via URL - show it
+            history.replaceState({ tab: hash }, '', '#' + hash);
+            showTab(null, hash, false);
+        } else {
+            // Default load - keep URL clean, no hash
+            history.replaceState({ tab: 'dinner' }, '', window.location.pathname);
+        }
     })();
 
     // ===== TONIGHT'S DINNER =====
